@@ -8,9 +8,9 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 15,
-          background: "#0c0e12",
-          color: "#e8eaed",
+          fontSize: 14,
+          background: "#ffffff",
+          color: "#0d9488",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -18,6 +18,7 @@ export default function Icon() {
           justifyContent: "center",
           fontWeight: 700,
           fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+          border: "1px solid #e5e7eb",
         }}
       >
         BM

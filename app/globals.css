@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground: #e8eaed;
-  --muted: #9aa0a6;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --background: #fafafa;
 }
 
 html {
@@ -12,5 +13,5 @@ html {
 }
 
 body {
-  @apply bg-surface text-[var(--foreground)] antialiased;
+  @apply bg-surface text-ink antialiased;
 }

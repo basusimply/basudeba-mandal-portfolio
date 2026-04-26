@@ -1,25 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
   display: "swap",
 });
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   display: "swap",
 });
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://localhost:3000";
+
+export const viewport: Viewport = {
+  themeColor: "#fafafa",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -27,7 +31,7 @@ export const metadata: Metadata = {
     default: `${site.name} · ${site.title}`,
     template: `%s · ${site.name}`,
   },
-  description: site.oneLiner,
+  description: site.tagline,
   openGraph: {
     title: `${site.name} · ${site.title}`,
     description: site.tagline,
@@ -44,8 +48,8 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="min-h-screen font-sans">
+    <html lang="en" className={`${plusJakarta.variable} ${jetbrains.variable}`}>
+      <body className="min-h-screen font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

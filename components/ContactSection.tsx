@@ -1,28 +1,20 @@
-import { site } from "@/lib/site";
+import Link from "next/link";
 
+/** Slim CTA on home — full form lives on /contact */
 export function ContactSection() {
   return (
-    <div className="rounded-xl border border-surface-border bg-surface-elevated/40 p-8">
-      <p className="text-sm text-[var(--muted)]">
-        For opportunities, collaborations, or a copy of my resume, reach out via
-        email or LinkedIn.
+    <div className="rounded-2xl border border-surface-border bg-surface-elevated p-8 shadow-card sm:p-10">
+      <h3 className="text-xl font-semibold text-ink">Let&apos;s connect</h3>
+      <p className="mt-3 max-w-2xl text-ink-muted">
+        Open to discussing platform engineering, SRE, and collaboration. Use the
+        form for project inquiries or partnerships—I&apos;ll reply by email.
       </p>
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-8">
-        <a
-          href={`mailto:${site.email}`}
-          className="text-base font-medium text-white underline-offset-4 transition hover:text-accent hover:underline"
-        >
-          {site.email}
-        </a>
-        <a
-          href={site.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-base font-medium text-white underline-offset-4 transition hover:text-accent hover:underline"
-        >
-          LinkedIn profile
-        </a>
-      </div>
+      <Link
+        href="/contact"
+        className="mt-6 inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+      >
+        Send a message
+      </Link>
     </div>
   );
 }

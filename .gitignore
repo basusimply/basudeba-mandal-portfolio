@@ -1,0 +1,54 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# local caches & tooling
+.turbo
+.swc
+.cache
+*.tsbuildinfo
+.eslintcache
+
+# testing
+/coverage
+*.lcov
+
+# misc
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.pem
+.env*.local
+.env
+.env.development
+.env.production
+.env.test
+
+# debug & logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ide / editor (local only; not needed on Vercel)
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# vercel
+.vercel
